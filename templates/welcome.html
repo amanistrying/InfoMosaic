@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>InfoMosaic | Welcome</title>
+  <style>
+    /* CSS styles for the page */
+    body {
+      background-color: #f8f8f8;
+      font-family: Montserrat, Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 40px 20px;
+
+
+      text-align: center;
+    }
+
+    h1 {
+      font-family: Montserrat, Arial, sans-serif;
+      font-size: 96px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-family: Montserrat, Arial, sans-serif;
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 16px;
+      text-decoration: none;
+      background-color: #4CAF50;
+      color: #fff;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Welcome to InfoMosaic</h1>
+    <p>We provide exceptional services tailored to your needs.</p>
+    <form action="{% url 'user' %}" method="post">
+      {% csrf_token %}
+      <button type="submit" class="button">Explore Our Services</button>
+    </form>
+  </div>
+</body>
+
+</html>

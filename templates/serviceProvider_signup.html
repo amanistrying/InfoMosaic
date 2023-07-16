@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>InfoMosaic | SignUp</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+
+        body {
+            background-color: #faf3eb;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .login-container {
+            width: 75%;
+            padding: 0px;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+            display: flex;
+            align-items: center;
+            margin: 0px;
+        }
+
+        .login-container .left-section {
+            flex: 0 0 55%;
+            text-align: center;
+        }
+
+        .login-container .left-section img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .login-container .right-section {
+            flex: 0 0 45%;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+
+        .login-container h1 {
+            color: #28383b;
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-bottom: 30px;
+            font-size: 35px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            z-index: 1;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 50%;
+            height: 35px;
+            padding: 4px;
+            background-color: #cccccc4e;
+            border: 0px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            padding-left: 18px;
+        }
+
+        .form-group button {
+            width: 55.4%;
+            height: 50px;
+            padding: 10px;
+            background-color: #28383b;
+            color: #faf3eb;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        ::placeholder {
+            color: #28383b;
+            opacity: 0.7;
+        }
+
+        .form-group button:hover {
+            background-color: #395a60;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 18px;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/9659230551.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="login-container">
+        <div class="left-section">
+            {% load static %}
+            <img src="{% static 'imgsup.png' %}" alt="My image">
+        </div>
+        <div class="right-section">
+            <h1>Want to register as a Service Provider?</h1>
+            <form method="post" action="{% url 'serviceProviderLogIn' %}">
+                {% csrf_token %}
+                <div class="fullname form-group">
+                    <input type="text" name="fullname" id="fullname" placeholder="Name" required>
+                </div>
+                <div class="username form-group">
+                    <input type="text" name="username" id="username" placeholder="Username" required>
+                </div>
+                <div class="password form-group">
+                    <input type="password" name="password" id="password" placeholder="Password" minlength="6" required>
+                </div>
+                <div class="email form-group">
+                    <input type="text" name="email" id="email" placeholder="Email id" required>
+                </div>
+                <div class="phoneno form-group">
+                    <input type="text" name="phoneno" id="phoneno" placeholder="Phone no." required>
+                </div>
+                <div class="service form-group">
+                    <input type="text" name="service" id="service" placeholder="Enter services separated by commas">
+                </div>
+                <div class="location form-group">
+                    <input type="text" name="location" id="location" placeholder="Location" required>
+                </div>
+                <div class="signup-button form-group">
+                    <button type="submit">Sign Up</button>
+                </div>
+            </form>
+            <div class="error-message">
+                {% if error_message %}
+                <p>{{ error_message }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
