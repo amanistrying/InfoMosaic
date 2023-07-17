@@ -9,19 +9,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <style>
     body {
-      font-family: 'Montserrat SemiBold', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       {% load static %}
       background-image: url("{% static 'mansplit.jpg' %}");
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       background-color: #f5f5f5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       min-height: 100vh;
       margin: 0;
       padding: 0;
+    }
+
+    .dadcontainer{
+      display: flex;
     }
 
     img{
@@ -29,64 +30,64 @@
       max-height: 100%;
     }
 
-    .container {
-      display: flex;
-      flex-direction: column;
+    .container_left{
+      position: absolute;
+      left: 10%;
+      width: 22%;
+    }
+
+    .container_right{
+      position: absolute;
+      left: 70%;
       width: 20%;
-      height: 60%;
-      margin: 100px auto;
-      justify-content: center;
-      gap: 2%;
-      text-align: center;
-      background-color: white;
-      border-radius: 20px;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      position: relative;
-      z-index: 2;
     }
 
     .logo {
-      font-size: 188px;
+      font-size: 3.3em;
       color: #555;
-      margin-bottom: 20px;
     }
 
-    .option {
-      width: 75%;
-      align-items: center;
-      padding: 20px;
-      background-color: #eee;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+    .signs{
+      position: absolute;
+      font-size: 3em;
+      color: white;
+      display: block;
+      background-color: #555;
+      border-radius: 50%;
+      width: 1.3em;
+      height: 1.2em;
       text-align: center;
-      margin: 0 auto;
-      font-size: 20px;
+      left: 36%;
     }
 
-    .option:hover {
-      background-color: #ddd;
+    .textbias{
+      font-size: 1.2em;
+      color: #555;
     }
+
 
     a {
       text-decoration: none;
-      color: #514e4ec0;
+      color: white;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+<div style="height: 10em;"></div>
+  
+  <div class="container_right">
     <div class="logo">
-      <i class="fas fa-user"></i>
+      <i class="fas fa-user"></i><b> SEARCH SERVICES</b>
     </div>
-    <a href="{% url 'login' %}" class="option">USER</a>
+    <div class="textbias">Need Services or Contact info of services avalaible nearby you?<br><br><br><br></div>
+    <div class="signs" style="left: 40%;"><a href="{% url 'login' %}" ><i class="fas fa-arrow-right"></i></a></div>
   </div>
-  <div class="container">
+  <div class="container_left">
     <div class="logo">
-      <i class="fas fa-cogs"></i>
+      <i class="fas fa-cogs"></i><b> SERVICE PROVIDER</b>
     </div>
-    <a href="{% url 'serviceProviderSignUp' %}" class="option">SERVICE PROVIDER</a>
+    <div class="textbias">Want to promote your services in your locality and nearby? Try our Organization<br><br><br></div>
+    <div class="signs"><a href="{% url 'serviceProviderSignUp' %}" ><i class="fas fa-arrow-left"></i></a></div>
   </div>
 </body>
 </html>
