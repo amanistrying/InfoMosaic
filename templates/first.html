@@ -8,8 +8,27 @@
   <title>InfoMosaic</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <style>
-    body {
+    body{
+      display: block;
       font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      width: 100%;
+    }
+
+    .page1{
+      display: block;
+      {% load static %}
+      background-image: url("{% static 'wels.png' %}");
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      margin: 0;
+      width: 100%;
+      height: 1200px;
+    }
+
+
+    .page2 {
+      
       {% load static %}
       background-image: url("{% static 'mansplit.jpg' %}");
       background-repeat: no-repeat;
@@ -19,6 +38,13 @@
       min-height: 100vh;
       margin: 0;
       padding: 0;
+    }
+
+    .welcome{
+      text-align: left;
+      font-size: 5em;
+      font-weight: 600;
+      color: aliceblue;;
     }
 
     .dadcontainer{
@@ -73,6 +99,10 @@
   </style>
 </head>
 <body>
+  <div class="page1">
+    <div class="welcome">InfoMosaic</div>
+  </div>
+  <div class="page2">
 <div style="height: 10em;"></div>
   
   <div class="container_right">
@@ -88,6 +118,7 @@
     </div>
     <div class="textbias">Want to promote your services in your locality and nearby? Try our Organization<br><br><br></div>
     <div class="signs"><a href="{% url 'serviceProviderSignUp' %}" ><i class="fas fa-arrow-left"></i></a></div>
+  </div>
   </div>
 </body>
 </html>
