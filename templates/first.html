@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>InfoMosaic</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <style>
     body {
       font-family: 'Montserrat SemiBold', sans-serif;
+      {% load static %}
+      background-image: url("{% static 'mansplit.jpg' %}");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
       background-color: #f5f5f5;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
@@ -16,12 +24,9 @@
       padding: 0;
     }
 
-    .image-container {
-      position: fixed;
-      left: 50%;
-      bottom: 0;
-      transform: translateX(-50%);
-      z-index: 1;
+    img{
+      max-width: 100%;
+      max-height: 100%;
     }
 
     .container {
@@ -82,9 +87,6 @@
       <i class="fas fa-cogs"></i>
     </div>
     <a href="{% url 'serviceProviderSignUp' %}" class="option">SERVICE PROVIDER</a>
-  </div>
-  <div class="image-container">
-    <img src="{% static 'mansplit.jpg' %}" alt="Imagemansplit">
   </div>
 </body>
 </html>
