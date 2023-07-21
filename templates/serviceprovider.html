@@ -11,33 +11,45 @@
 </head>
 
 <body>
-    <form method="post" action="{% url 'serviceProviderLogIn' %}">
+    <form method="post" action="{% url 'edit' %}">
         {% csrf_token %}
-        <div class="fullname form-group">
-            <input type="text" name="fullname" id="fullname" placeholder="Name" required>
-        </div>
         <div class="username form-group">
-            <input type="text" name="username" id="username" placeholder="Username" required>
+            <input type="text" name="sp_username" id="username" placeholder="Username" value="{{user.username}}"
+                required>
         </div>
-        <div class="password form-group">
-            <input type="password" name="password" id="password" placeholder="Password" minlength="6" required>
+        <div class="fullname form-group">
+            <input type="text" name="sp_fullname" id="fullname" placeholder="Name" value="{{ user.name }}">
         </div>
         <div class="email form-group">
-            <input type="text" name="email" id="email" placeholder="Email id" required>
+            <input type="text" name="sp_email" id="email" placeholder="Email id" value="{{ user.email }}">
         </div>
         <div class="phoneno form-group">
-            <input type="text" name="phoneno" id="phoneno" placeholder="Phone no." required>
+            <input type="text" name="sp_phoneno" id="phoneno" placeholder="Phone no." value="{{ user.phone }}">
         </div>
         <div class="service form-group">
-            <input type="text" name="service" id="service" placeholder="Enter services separated by commas">
+            <input type="text" name="sp_service" id="service" placeholder="Enter services separated by commas"
+                value="{{ user.services|join:', ' }}">
         </div>
         <div class="location form-group">
-            <input type="text" name="location" id="location" placeholder="Location" required>
+            <input type="text" name="sp_location" id="location" placeholder="Location" value="{{ user.location }}">
+        </div>
+        <div class="password form-group">
+            <input type="password" name="sp_password" id="password" placeholder="Password" minlength="6" required>
         </div>
         <div class="signup-button form-group">
-            <button type="submit">Sign Up</button>
+            <button type="submit" name="action" value="update">Update</button>
+        </div>
+        <div class="logout-button form-group">
+            <a href="{% url 'logout' %}">Logout</a>
         </div>
     </form>
+
+    {% if error_message %}
+    <div class="error-message">
+        <p>{{ error_message }}</p>
+    </div>
+    {% endif %}
+
 </body>
 
 </html>
