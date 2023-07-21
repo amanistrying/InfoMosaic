@@ -58,12 +58,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Personal Details</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Service provider details</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             background-color: #f5f5f5;
             margin: 0;
             padding: 0;
@@ -73,31 +76,29 @@
             min-height: 100vh;
         }
 
-        .container {
-            display: flex;
-            max-width: 800px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
         .left-block {
-            flex: 1;a
+            position: absolute;
+            left: 2%;
+            top: 7%;
+            width: 30%;
+            height: 60%;
+            position: absolute;
             background-color: #333;
             color: #fff;
-            padding: 20px;
+            padding: 0px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
         }
 
         .left-block img {
-            width: 100px;
-            height: 100px;
+            width: 300px;
+            height: 300px;
             border-radius: 50%;
             margin-bottom: 10px;
+            display: flex;
+            align-items: center;
         }
 
         .logout-btn {
@@ -115,6 +116,12 @@
         }
 
         .right-block {
+            position: absolute;
+            width: 50%;
+            height: 70%;
+            top: 6%;
+            left: 40%;
+            background-color: #333;
             flex: 2;
             padding: 20px;
             display: flex;
@@ -155,43 +162,49 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="left-block">
-            <img src="your_user_image.jpg" alt="User Image">
-            <button class="logout-btn">Logout</button>
+        <<div class="left-block">
+            {% load static %}
+            <img src="{% static 'face.png' %}" alt="User Image">
+            <a href="{% url 'logout' %}">
+            <button class="logout-btn">Logout</button></a>
         </div>
         <div class="right-block">
-            <form id="editForm">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
-
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
-
-                <label for="age">Age</label>
-                <input type="number" id="age" name="age" placeholder="Your Age" required>
-
-                <label for="gender">Gender</label>
-                <select id="gender" name="gender" required>
-                    <option value="" disabled selected>Select your gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
-                </select>
-
-                <label for="address">Address</label>
-                <input type="text" id="address" name="address" placeholder="Your Address" required>
-
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
-
-                <label for="occupation">Occupation</label>
-                <input type="text" id="occupation" name="occupation" placeholder="Your Occupation" required>
-
-                <button class="save-btn">Save/Update</button>
+            <form method="post" action="{% url 'edit' %}">
+                {% csrf_token %}
+                <div class="username form-group">
+                    <input type="text" name="sp_username" id="username" placeholder="Username" value="{{user.username}}"
+                        required>
+                </div>
+                <div class="fullname form-group">
+                    <input type="text" name="sp_fullname" id="fullname" placeholder="Name" value="{{ user.name }}">
+                </div>
+                <div class="email form-group">
+                    <input type="text" name="sp_email" id="email" placeholder="Email id" value="{{ user.email }}">
+                </div>
+                <div class="phoneno form-group">
+                    <input type="text" name="sp_phoneno" id="phoneno" placeholder="Phone no." value="{{ user.phone }}">
+                </div>
+                <div class="service form-group">
+                    <input type="text" name="sp_service" id="service" placeholder="Enter services separated by commas"
+                        value="{{ user.services|join:', ' }}">
+                </div>
+                <div class="location form-group">
+                    <input type="text" name="sp_location" id="location" placeholder="Location" value="{{ user.location }}">
+                </div>
+                <div class="password form-group">
+                    <input type="password" name="sp_password" id="password" placeholder="Password" minlength="6" required>
+                </div>
+                <div class="signup-button form-group">
+                    <button type="submit" name="action" value="update">Update</button>
+                </div>
             </form>
+        
+            {% if error_message %}
+            <div class="error-message">
+                <p>{{ error_message }}</p>
+            </div>
+            {% endif %}
         </div>
-    </div>
 </body>
 
 </html>
