@@ -15,5 +15,6 @@ urlpatterns = [
     path('serviceProvider/home', views.sp_home, name='sphome'),
     path('InfoMosaic/', views.welcome, name='welcome'),
     path('user/', views.user, name='user'),
-    path('serviceProvider/', views.sp, name='edit')
+    path('serviceProvider/', views.sp, name='edit'),
+    path('serviceProvider/login/', views.logout, name='logout')
 ]
