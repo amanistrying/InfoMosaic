@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 
 <html>
 
@@ -50,6 +50,188 @@
     </div>
     {% endif %}
 
+</body>
+
+</html>!-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Service provider details</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .left-block {
+            position: absolute;
+            left: 2%;
+            top: 7%;
+            width: 30%;
+            height: 60%;
+            position: absolute;
+            background-color: #333;
+            color: #fff;
+            padding: 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .left-block img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logout-btn {
+            background-color: #555;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .logout-btn:hover {
+            background-color: #777;
+        }
+
+        .right-block {
+            position: absolute;
+            width: 50%;
+            height: 70%;
+            top: 6%;
+            left: 40%;
+            background-color: #333;
+            flex: 2;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .right-form{
+            position: relative;
+            margin-left: 2em;
+        }
+
+        .right-child {
+            display: block;
+            position: absolute;
+            left: 44%;
+            top: 20%;
+            width: 40%;
+            height: 60%;
+            background-color: #d0b39b;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 2.5%;
+        }
+
+        label {
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+            padding: 10px;
+            margin-bottom: 25px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .save-btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            align-self: center;
+        }
+
+
+        .save-btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+        <<div class="left-block">
+            {% load static %}
+            <img src="{% static 'face.png' %}" alt="User Image">
+            <br>
+            <a href="{% url 'logout' %}">
+            <button class="logout-btn">Logout</button></a>
+        </div>
+        <div class="right-block">
+            <div class="right_form">
+            <br>
+            <form method="post" action="{% url 'edit' %}">
+                {% csrf_token %}
+                <div class="username form-group">
+                    <input type="text" name="sp_username" id="username" placeholder="Username" value="{{user.username}}"
+                        required>
+                </div>
+                <div class="fullname form-group">
+                    <input type="text" name="sp_fullname" id="fullname" placeholder="Name" value="{{ user.name }}">
+                </div>
+                <div class="email form-group">
+                    <input type="text" name="sp_email" id="email" placeholder="Email id" value="{{ user.email }}">
+                </div>
+                <div class="phoneno form-group">
+                    <input type="text" name="sp_phoneno" id="phoneno" placeholder="Phone no." value="{{ user.phone }}">
+                </div>
+                <div class="service form-group">
+                    <input type="text" name="sp_service" id="service" placeholder="Enter services separated by commas"
+                        value="{{ user.services|join:', ' }}">
+                </div>
+                <div class="location form-group">
+                    <input type="text" name="sp_location" id="location" placeholder="Location" value="{{ user.location }}">
+                </div>
+                <div class="password form-group">
+                    <input type="password" name="sp_password" id="password" placeholder="Password" minlength="6" required>
+                </div>
+                <div class="signup-button form-group">
+                    <button class="logout-btn" type="submit" name="action" value="update">Update</button>
+                </div>
+            </form>
+            </div>
+        
+            {% if error_message %}
+            <div class="error-message">
+                <p>{{ error_message }}</p>
+            </div>
+            {% endif %}
+
+            <div class="right-child">Upload your document</div>
+        </div>
 </body>
 
 </html>
