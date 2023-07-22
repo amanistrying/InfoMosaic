@@ -62,16 +62,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
   <title>Service provider details</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #f5f5f5;
+            background-color: #c4c4bc;
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             min-height: 100vh;
         }
@@ -83,7 +86,7 @@
             width: 30%;
             height: 60%;
             position: absolute;
-            background-color: #333;
+            background-color: #c4c4bc;
             color: #fff;
             padding: 0px;
             display: flex;
@@ -105,63 +108,74 @@
             background-color: #555;
             color: #fff;
             border: none;
-            padding: 8px 16px;
+            padding: 8px 30px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 20px;
         }
 
         .logout-btn:hover {
             background-color: #777;
         }
 
-        .right-block {
+        .right-parent {
+            display: flex;
+            flex-direction: row;
             position: absolute;
-            width: 50%;
-            height: 70%;
-            top: 6%;
-            left: 40%;
-            background-color: #333;
-            flex: 2;
-            padding: 20px;
+            right: 0%;
+            width: 60%;
+            min-height: 100%;
+            background-color: #f9f3eb;
+            padding: 0 35px;
+            justify-content: space-between;
+        }
+
+        .right-block {
+            padding-top: 5%;
             display: flex;
             flex-direction: column;
         }
 
         .right-form{
             position: relative;
-            margin-left: 2em;
+            margin-left: 10em;
         }
 
         .right-child {
-            display: block;
-            position: absolute;
-            left: 44%;
-            top: 20%;
-            width: 40%;
-            height: 60%;
-            background-color: #d0b39b;
+            width: 45%;
+            background-color: #2a363b;
+            border-radius: 8%;
+            margin: 3%;
+            margin-top: 20%;
+            color: #f5f5f5;
             text-align: center;
-            justify-content: center;
-            align-items: center;
-            border-radius: 2.5%;
+            padding: 10px 0px;
+            max-height: 50vh;
         }
 
         label {
             color: #333;
-            font-weight: bold;
+            font-family: 'Montserrat Medium', sans-serif;
+            font-size: 1.2em;
             margin-bottom: 5px;
+            width: 170px;
+            display: inline-block;
+            color: #2a363b;
+            font-weight: 600;
         }
 
         input[type="text"],
         input[type="email"],
         input[type="password"],
         select {
-            padding: 10px;
+            padding: 9px;
             margin-bottom: 25px;
-            border: 1px solid #ccc;
+            background-color: #efece8dd;
+            border: 0.5px solid #ccc;
             border-radius: 5px;
             font-size: 16px;
+            color: #777777a3;
+            font-weight: 50;
         }
 
         .save-btn {
@@ -179,59 +193,128 @@
         .save-btn:hover {
             background-color: #555;
         }
+
+
+        .h1{
+            font-weight: 600;
+            font-size: 3em;
+            margin-bottom: 22px;
+        }
+
+        i{
+            font-size: 10em;
+        }
+
+        #update{
+            width: 95%;
+        }
     </style>
 </head>
 
 <body>
-        <<div class="left-block">
-            {% load static %}
-            <img src="{% static 'face.png' %}" alt="User Image">
-            <br>
-            <a href="{% url 'logout' %}">
-            <button class="logout-btn">Logout</button></a>
-        </div>
-        <div class="right-block">
-            <div class="right_form">
-            <br>
+    <div class="left-block">
+        {% load static %}
+        <img src="{% static 'face.png' %}" alt="User Image">
+        <br>
+        <a href="{% url 'logout' %}">
+            <button class="logout-btn">Logout</button>
+        </a>
+    </div>
+
+    <div class="right-parent">
+      <div class="right-block">
+        <div class="h1">Personal Details</div>
+        <div class="right_form">
             <form method="post" action="{% url 'edit' %}">
                 {% csrf_token %}
                 <div class="username form-group">
+                    <label>Username</label>
                     <input type="text" name="sp_username" id="username" placeholder="Username" value="{{user.username}}"
                         required>
                 </div>
                 <div class="fullname form-group">
+                    <label> Fullname</label>
                     <input type="text" name="sp_fullname" id="fullname" placeholder="Name" value="{{ user.name }}">
                 </div>
                 <div class="email form-group">
+                    <label>Email</label>
                     <input type="text" name="sp_email" id="email" placeholder="Email id" value="{{ user.email }}">
                 </div>
                 <div class="phoneno form-group">
+                    <label> Phone No</label>
                     <input type="text" name="sp_phoneno" id="phoneno" placeholder="Phone no." value="{{ user.phone }}">
                 </div>
                 <div class="service form-group">
+                    <label>Services</label>
                     <input type="text" name="sp_service" id="service" placeholder="Enter services separated by commas"
                         value="{{ user.services|join:', ' }}">
                 </div>
                 <div class="location form-group">
+                    <label>Fullname</label>
                     <input type="text" name="sp_location" id="location" placeholder="Location" value="{{ user.location }}">
                 </div>
                 <div class="password form-group">
+                    <label>Verify Password</label>
                     <input type="password" name="sp_password" id="password" placeholder="Password" minlength="6" required>
                 </div>
                 <div class="signup-button form-group">
-                    <button class="logout-btn" type="submit" name="action" value="update">Update</button>
+                    <button class="logout-btn" type="submit" name="action" value="update" id = "update">Update</button>
                 </div>
             </form>
-            </div>
-        
-            {% if error_message %}
-            <div class="error-message">
-                <p>{{ error_message }}</p>
-            </div>
-            {% endif %}
-
-            <div class="right-child">Upload your document</div>
         </div>
+
+        {% if error_message %}
+        <div class="error-message">
+            <p>{{ error_message }}</p>
+        </div>
+        {% endif %}
+    </div>
+        <div class="right-child" id="drag-drop-area">
+            <p>Drag and drop files here to upload</p>
+            <p>Or click to select files</p>
+            <p><i class="fa fa-upload" aria-hidden="true"></i></p>
+            <input type="file" id="file-input" style="display: none;" />
+        </div>
+    </div>
+
+    <script>
+        const dragDropArea = document.getElementById('drag-drop-area');
+        const fileInput = document.getElementById('file-input');
+
+        // Prevent default behaviors when files are dragged over the dragDropArea
+        dragDropArea.addEventListener('dragover', (event) => {
+            event.preventDefault();
+            dragDropArea.classList.add('dragging');
+        });
+
+        dragDropArea.addEventListener('dragleave', () => {
+            dragDropArea.classList.remove('dragging');
+        });
+
+        dragDropArea.addEventListener('drop', (event) => {
+            event.preventDefault();
+            dragDropArea.classList.remove('dragging');
+            const file = event.dataTransfer.files[0];
+            handleFileUpload(file);
+        });
+
+        // When the user clicks on the dragDropArea, open the file input dialog
+        dragDropArea.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        // Handle file selection from the file input dialog
+        fileInput.addEventListener('change', () => {
+            const file = fileInput.files[0];
+            handleFileUpload(file);
+        });
+
+        // Function to handle file upload (You can modify this to upload the file to your server)
+        function handleFileUpload(file) {
+            // You can implement your file upload logic here
+            console.log('File selected:', file.name);
+        }
+    </script>
 </body>
 
 </html>
