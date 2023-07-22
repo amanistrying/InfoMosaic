@@ -105,6 +105,12 @@
             color: red;
             font-size: 25px;
         }
+
+        .txtt{
+            color: #4b2e72;
+            font-size: 0.8em;
+        }
+        
     </style>
     <script src="https://kit.fontawesome.com/9659230551.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -132,8 +138,8 @@
                     <button type="submit">Log In</button>
                 </div>
             </form>
-            <div>Don't have account?</div>
-            <a href="{% url 'serviceProviderSignUp' %}">Sign Up</a>
+            <div class="txtt">Don't have account?
+                <a href="{% url 'signUp' %}">Sign Up</a></div>
             <div class="error-message">
                 {% if error_message %}
                 <p>{{ error_message }}</p>
