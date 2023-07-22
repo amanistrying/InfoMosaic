@@ -128,6 +128,25 @@
             flex-direction: column;
         }
 
+        .right-form{
+            position: relative;
+            margin-left: 2em;
+        }
+
+        .right-child {
+            display: block;
+            position: absolute;
+            left: 44%;
+            top: 20%;
+            width: 40%;
+            height: 60%;
+            background-color: #d0b39b;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 2.5%;
+        }
+
         label {
             color: #333;
             font-weight: bold;
@@ -136,9 +155,10 @@
 
         input[type="text"],
         input[type="email"],
+        input[type="password"],
         select {
             padding: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 16px;
@@ -155,6 +175,7 @@
             align-self: center;
         }
 
+
         .save-btn:hover {
             background-color: #555;
         }
@@ -165,10 +186,13 @@
         <<div class="left-block">
             {% load static %}
             <img src="{% static 'face.png' %}" alt="User Image">
+            <br>
             <a href="{% url 'logout' %}">
             <button class="logout-btn">Logout</button></a>
         </div>
         <div class="right-block">
+            <div class="right_form">
+            <br>
             <form method="post" action="{% url 'edit' %}">
                 {% csrf_token %}
                 <div class="username form-group">
@@ -195,15 +219,18 @@
                     <input type="password" name="sp_password" id="password" placeholder="Password" minlength="6" required>
                 </div>
                 <div class="signup-button form-group">
-                    <button type="submit" name="action" value="update">Update</button>
+                    <button class="logout-btn" type="submit" name="action" value="update">Update</button>
                 </div>
             </form>
+            </div>
         
             {% if error_message %}
             <div class="error-message">
                 <p>{{ error_message }}</p>
             </div>
             {% endif %}
+
+            <div class="right-child">Upload your document</div>
         </div>
 </body>
 
