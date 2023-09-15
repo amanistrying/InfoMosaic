@@ -27,16 +27,34 @@
 
 
     .page2 {
-      
       {% load static %}
-      background-image: url("{% static 'mansplit.jpg' %}");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
       background-color: #f5f5f5;
       min-height: 100vh;
       margin: 0;
       padding: 0;
+      position: relative; /* Set the parent element to relative positioning */
+    }
+
+    .half-image {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50%; /* Divide the container into two halves */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    
+    .half1 {
+      {% load static %}
+      left: 0;
+      background-image: url("{% static 'half1.jpg' %}"); /* Specify the image for the first half */
+    }
+    
+    .half2 {
+      {% load static %}
+      right: 0;
+      background-image: url("{% static 'half2.jpg' %}"); /* Specify the image for the second half */
     }
 
     .welcome{
@@ -112,6 +130,10 @@
       font-size: 2em;
     }
 
+    .thebar{
+      height: 10em;
+    }
+
 
     a {
       text-decoration: none;
@@ -138,8 +160,53 @@
       }
 
       .im {
-        font-size: 70px;
+        font-size: 65px;
         top: 15%;
+      }
+
+      .half-image {
+        width: 100%; /* Make each half take up the full width */
+        height: 50%; /* Adjust the height to 50% for each half */
+      }
+    
+      .half1 {
+        top: 0;
+        left: 0;
+      }
+    
+      .half2 {
+        top: 75%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+
+      .container_left{
+        position: absolute;
+        font-size: 1em;
+        width: 55%;
+      }
+
+      .container_right {
+        position: absolute;
+        font-size: 1em;
+        left: 35%;
+        width: 55%;
+      }
+
+      .container_right {
+        top: 55%;
+      }
+
+      .logo {
+        font-size: 2em; /* Adjust the font size for smaller screens */
+      }
+
+      .textbias {
+        font-size: 1em; /* Adjust the font size for smaller screens */
+      }
+
+      .thebar{
+        height: 15.417vw;
       }
     }
 
@@ -153,22 +220,23 @@
 
   <div class="extrael">We provide exceptional services tailored to your needs</div>
   <div class="page2">
-<div style="height: 10em;"></div>
-  
-  <div class="container_right">
-    <div class="logo">
-      <i class="fas fa-user"></i><b> SEARCH SERVICES</b>
+    <div class="half-image half1"></div>
+    <div class="half-image half2"></div>
+    <div class="thebar"></div>
+    <div class="container_right">
+      <div class="logo">
+        <i class="fas fa-user"></i><b> SEARCH SERVICES</b>
+      </div>
+      <div class="textbias">Need Services or Contact info of services avalaible nearby you?<br><br><br><br></div>
+      <div class="signs" style="left: 40%;"><a href="{% url 'login' %}" ><i class="fas fa-arrow-right"></i></a></div>
     </div>
-    <div class="textbias">Need Services or Contact info of services avalaible nearby you?<br><br><br><br></div>
-    <div class="signs" style="left: 40%;"><a href="{% url 'login' %}" ><i class="fas fa-arrow-right"></i></a></div>
-  </div>
-  <div class="container_left">
-    <div class="logo">
-      <i class="fas fa-cogs"></i><b> SERVICE PROVIDER</b>
+    <div class="container_left">
+      <div class="logo">
+        <i class="fas fa-cogs"></i><b> SERVICE PROVIDER</b>
+      </div>
+      <div class="textbias">Want to promote your services in your locality and nearby? Try our Organization<br><br><br></div>
+      <div class="signs"><a href="{% url 'home' %}" ><i class="fas fa-arrow-left"></i></a></div>
     </div>
-    <div class="textbias">Want to promote your services in your locality and nearby? Try our Organization<br><br><br></div>
-    <div class="signs"><a href="{% url 'home' %}" ><i class="fas fa-arrow-left"></i></a></div>
-  </div>
   </div>
 </body>
 </html>
