@@ -33,14 +33,14 @@
       min-height: 100vh;
       margin: 0;
       padding: 0;
-      position: relative; /* Set the parent element to relative positioning */
+      position: relative;
     }
 
     .half-image {
       position: absolute;
       top: 0;
       bottom: 0;
-      width: 50%; /* Divide the container into two halves */
+      width: 50%;
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
@@ -49,13 +49,13 @@
     .half1 {
       {% load static %}
       left: 0;
-      background-image: url("{% static 'half1.jpg' %}"); /* Specify the image for the first half */
+      background-image: url("{% static 'half1.jpg' %}");
     }
 
     .half2 {
       {% load static %}
       right: 0;
-      background-image: url("{% static 'half2.jpg' %}"); /* Specify the image for the second half */
+      background-image: url("{% static 'half2.jpg' %}");
     }
 
     .welcome {
@@ -139,122 +139,28 @@
       color: white;
     }
 
+    /* New CSS for the navigation bar */
     .navbar {
-      display: none;
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0);
+      background-color: rgba(0, 0, 0, 0); /* Initially transparent */
       z-index: 1000;
-      transition: background-color 0.3s ease;
-    }
-
-    .navbar ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 60px;
-    }
-
-    .navbar li {
-      margin: 0 20px;
-    }
-
-    .navbar a {
-      text-decoration: none;
-      color: white;
-      font-size: 20px;
-      font-family: Montserrat;
-      transition: color 0.3s ease;
-    }
-
-    .navbar a:hover {
-      color: #1b1c1d;
-    }
-
-    @media (max-width: 768px) {
-      .page1 {
-        height: 14em;
-        width: 100%;
-        background-size: cover;
-      }
-
-      .extrael {
-        height: 200px;
-        font-size: 1.5em;
-        padding: 20px;
-        text-align: center;
-      }
-
-      .welcome {
-        font-size: 2em;
-        top: 6%;
-      }
-
-      .im {
-        font-size: 65px;
-        top: 15%;
-      }
-
-      .half-image {
-        width: 100%;
-        height: 50%;
-      }
-
-      .half1 {
-        top: 0;
-        left: 0;
-      }
-
-      .half2 {
-        top: 75%;
-        left: 0;
-        transform: translateY(-50%);
-      }
-
-      .container_left {
-        position: absolute;
-        font-size: 1em;
-        width: 55%;
-      }
-
-      .container_right {
-        position: absolute;
-        font-size: 1em;
-        left: 35%;
-        width: 55%;
-      }
-
-      .container_right {
-        top: 70%;
-        transform: translateY(-50%);
-      }
-
-      .logo {
-        font-size: 2em;
-      }
-
-      .textbias {
-        font-size: 1em;
-      }
-
-      .thebar {
-        height: 15.417vw;
-      }
+      opacity: 0; /* Initially set opacity to 0 */
+      transition: background-color 0.3s ease, opacity 0.3s ease; /* Add transitions for background color and opacity */
     }
   </style>
 </head>
 <body>
+  <!-- Navigation bar -->
   <div class="navbar" id="navbar">
     <ul>
       <li><a href="#section1">Home</a></li>
       <li><a href="#section2">Sign Up</a></li>
     </ul>
   </div>
+
   <div class="page1">
     <div class="welcome"><br>WELCOME TO<br></div>
     <div class="im">InfoMosaic</div>
@@ -280,19 +186,22 @@
       <div class="signs"><a href="{% url 'home' %}" ><i class="fas fa-arrow-left"></i></a></div>
     </div>
   </div>
-  <<script>
+
+  <script>
     window.addEventListener('scroll', function () {
       const navbar = document.getElementById('navbar');
       const scrollY = window.scrollY;
-  
-      if (scrollY >= (window.innerHeight * 0.5)) {
-        navbar.style.display = 'block'; // Show the navbar
-        navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.9)'; // Change to your desired background color
+      const maxScroll = window.innerHeight * 0.5; // Scroll threshold for full opacity (adjust as needed)
+
+      if (scrollY >= maxScroll) {
+        navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.9)'; // Set the background color to opaque
+        navbar.style.opacity = 1; // Set opacity to 1 for full visibility
       } else {
-        navbar.style.display = 'none'; // Hide the navbar
+        navbar.style.backgroundColor = 'rgba(0, 0, 0, 0)'; // Set the background color to transparent
+        navbar.style.opacity = 0; // Set opacity to 0 for invisibility
       }
     });
   </script>
-  
 </body>
 </html>
+`
