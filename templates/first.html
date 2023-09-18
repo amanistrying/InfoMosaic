@@ -2,22 +2,22 @@
 <html>
 <head>
   <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>InfoMosaic</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
 
   <style>
-    body{
+    body {
       display: block;
       font-family: 'Montserrat', sans-serif;
       margin: 0;
       width: 100%;
     }
 
-    .page1{
+    .page1 {
       display: block;
       {% load static %}
       background-image: url("{% static 'finalwel.png' %}");
@@ -26,7 +26,6 @@
       height: 24em;
       margin: 0;
     }
-
 
     .page2 {
       {% load static %}
@@ -46,21 +45,20 @@
       background-position: center;
       background-size: cover;
     }
-    
+
     .half1 {
       {% load static %}
       left: 0;
       background-image: url("{% static 'half1.jpg' %}"); /* Specify the image for the first half */
     }
-    
+
     .half2 {
       {% load static %}
       right: 0;
       background-image: url("{% static 'half2.jpg' %}"); /* Specify the image for the second half */
     }
 
-    .welcome{
-      
+    .welcome {
       position: absolute;
       text-align: left;
       font-size: 3.5em;
@@ -69,7 +67,7 @@
       top: 7%;
     }
 
-    .im{
+    .im {
       position: absolute;
       text-align: left;
       font-size: 160px;
@@ -79,22 +77,22 @@
       top: 24%;
     }
 
-    .dadcontainer{
+    .dadcontainer {
       display: flex;
     }
 
-    img{
+    img {
       max-width: 100%;
       max-height: 100%;
     }
 
-    .container_left{
+    .container_left {
       position: absolute;
       left: 10%;
       width: 22%;
     }
 
-    .container_right{
+    .container_right {
       position: absolute;
       left: 70%;
       width: 20%;
@@ -105,7 +103,7 @@
       color: #555;
     }
 
-    .signs{
+    .signs {
       position: absolute;
       font-size: 3em;
       color: white;
@@ -118,12 +116,12 @@
       left: 36%;
     }
 
-    .textbias{
+    .textbias {
       font-size: 1.2em;
       color: #555;
     }
 
-    .extrael{
+    .extrael {
       display: flex;
       background-color: #f2f2f2;
       height: 300px;
@@ -132,10 +130,9 @@
       font-size: 2em;
     }
 
-    .thebar{
+    .thebar {
       height: 10em;
     }
-
 
     a {
       text-decoration: none;
@@ -143,13 +140,14 @@
     }
 
     .navbar {
+      display: none;
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0); /* Transparent initially */
-      transition: background-color 0.3s ease;
+      background-color: rgba(0, 0, 0, 0);
       z-index: 1000;
+      transition: background-color 0.3s ease;
     }
 
     .navbar ul {
@@ -169,7 +167,8 @@
     .navbar a {
       text-decoration: none;
       color: white;
-      font-weight: bold;
+      font-size: 20px;
+      font-family: Montserrat;
       transition: color 0.3s ease;
     }
 
@@ -181,18 +180,18 @@
       .page1 {
         height: 14em;
         width: 100%;
-        background-size: cover; 
+        background-size: cover;
       }
 
       .extrael {
-        height: 200px; /* Adjust the height as needed for smaller screens */
-        font-size: 1.5em; /* Adjust the font size for better readability on smaller screens */
-        padding: 20px; /* Add some padding to improve spacing */
+        height: 200px;
+        font-size: 1.5em;
+        padding: 20px;
         text-align: center;
       }
 
       .welcome {
-        font-size: 2em; /* Adjust the font size as needed for smaller screens */
+        font-size: 2em;
         top: 6%;
       }
 
@@ -202,22 +201,22 @@
       }
 
       .half-image {
-        width: 100%; /* Make each half take up the full width */
-        height: 50%; /* Adjust the height to 50% for each half */
+        width: 100%;
+        height: 50%;
       }
-    
+
       .half1 {
         top: 0;
         left: 0;
       }
-    
+
       .half2 {
         top: 75%;
         left: 0;
         transform: translateY(-50%);
       }
 
-      .container_left{
+      .container_left {
         position: absolute;
         font-size: 1em;
         width: 55%;
@@ -236,24 +235,24 @@
       }
 
       .logo {
-        font-size: 2em; /* Adjust the font size for smaller screens */
+        font-size: 2em;
       }
 
       .textbias {
-        font-size: 1em; /* Adjust the font size for smaller screens */
+        font-size: 1em;
       }
 
-      .thebar{
+      .thebar {
         height: 15.417vw;
       }
-
+    }
   </style>
 </head>
 <body>
   <div class="navbar" id="navbar">
     <ul>
-      <li><a href="#section1">Section 112</a></li>
-      <li><a href="#section2">Section 2</a></li>
+      <li><a href="#section1">Home</a></li>
+      <li><a href="#section2">Sign Up</a></li>
     </ul>
   </div>
   <div class="page1">
@@ -270,7 +269,7 @@
       <div class="logo">
         <i class="fas fa-user"></i><b> SEARCH SERVICES</b>
       </div>
-      <div class="textbias">Need Services or Contact info of services avalaible nearby you?<br><br><br><br></div>
+      <div class="textbias">Need Services or Contact info of services available nearby you?<br><br><br><br></div>
       <div class="signs" style="left: 40%;"><a href="{% url 'login' %}" ><i class="fas fa-arrow-right"></i></a></div>
     </div>
     <div class="container_left">
@@ -281,17 +280,19 @@
       <div class="signs"><a href="{% url 'home' %}" ><i class="fas fa-arrow-left"></i></a></div>
     </div>
   </div>
-  <script>
+  <<script>
     window.addEventListener('scroll', function () {
       const navbar = document.getElementById('navbar');
       const scrollY = window.scrollY;
-
+  
       if (scrollY >= (window.innerHeight * 0.5)) {
-        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.9)'; // Change to your desired background color
+        navbar.style.display = 'block'; // Show the navbar
+        navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.9)'; // Change to your desired background color
       } else {
-        navbar.style.backgroundColor = 'transparent';
+        navbar.style.display = 'none'; // Hide the navbar
       }
     });
   </script>
+  
 </body>
 </html>
