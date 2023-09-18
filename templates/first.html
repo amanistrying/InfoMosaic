@@ -211,6 +211,42 @@
       .thebar{
         height: 15.417vw;
       }
+
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: transparent;
+        transition: background-color 0.3s ease;
+        z-index: 1000;
+      }
+      
+      .navbar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+      }
+      
+      .navbar li {
+        margin: 0 20px;
+      }
+      
+      .navbar a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        transition: color 0.3s ease;
+      }
+      
+      .navbar a:hover {
+        color: #1b1c1d;
+      }
+      
     }
 
   </style>
