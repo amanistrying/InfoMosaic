@@ -283,5 +283,18 @@
       <div class="signs"><a href="{% url 'home' %}" ><i class="fas fa-arrow-left"></i></a></div>
     </div>
   </div>
+  <script>
+    window.addEventListener('scroll', function () {
+      const navbar = document.getElementById('navbar');
+      const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+  
+      if (scrollPercent >= 50) {
+        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.9)'; // Change to your desired background color
+      } else {
+        navbar.style.backgroundColor = 'transparent';
+      }
+    });
+  </script>
+  
 </body>
 </html>
