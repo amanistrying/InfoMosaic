@@ -17,7 +17,7 @@
       width: 100%;
     }
 
-    .page1 {
+    #page1 {
       display: block;
       {% load static %}
       background-image: url("{% static 'finalwel.png' %}");
@@ -149,12 +149,11 @@
       background-color: rgba(0, 0, 0, 0); /* Initially transparent */
       z-index: 1000;
       transition: background-color 0.5s linear, opacity 0.5s linear; /* Linear transitions for background color and opacity */
-      box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
     }
   
     .navbar.show {
       opacity: 1; /* Set opacity to 1 when the class 'show' is applied */
-      background-color: rgba(0, 0, 0, 0.2); /* Set the background color when the class 'show' is applied */
+      background-color: rgba(237, 237, 237, 0.949); /* Set the background color when the class 'show' is applied */
     }
   
     .navbar ul {
@@ -184,7 +183,7 @@
     }
 
   @media (max-width: 768px) {
-    .page1 {
+    #page1 {
       height: 14em;
       width: 100%;
       background-size: cover;
@@ -259,12 +258,12 @@
   <!-- Navigation bar -->
   <div class="navbar" id="navbar">
     <ul>
-      <li><a href="#section1">Home</a></li>
+      <li><a href="#page1">InfoMosaic</a></li>
       <li><a href="#section2">Sign Up</a></li>
     </ul>
   </div>
 
-  <div class="page1">
+  <div id="page1">
     <div class="welcome"><br>WELCOME TO<br></div>
     <div class="im">InfoMosaic</div>
   </div>
