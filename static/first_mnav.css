@@ -52,6 +52,11 @@
 
   .navbar1 .hidden-menu {
     display: none;
+    transition: background-color 0.5s linear, opacity 0.5s linear;
+  }
+
+  .navbar1 .hidden-menu ul{
+    justify-content: center;
   }
 
 .navbar1 .menu-icon .fas {
