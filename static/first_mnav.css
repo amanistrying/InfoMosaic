@@ -50,3 +50,18 @@
   .navbar1 li.home {
     margin-right: auto; /* Push "Home" to the left */
   }
+
+  .navbar1 .hidden-menu {
+    display: none;
+  }
+
+.navbar1 .menu-icon .fas {
+  font-size: 24px; /* Adjust the icon size as needed */
+  color: #1b1c1d; /* Icon color */
+  transition: color 0.5s ease; /* Transition effect for color change */
+}
+
+/* Change icon color on hover */
+.navbar1 .menu-icon:hover .fas {
+  color: #555; /* Change the icon color on hover */
+}

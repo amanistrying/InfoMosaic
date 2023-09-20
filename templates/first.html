@@ -287,11 +287,17 @@
 
   <div class="navbar1" id="mobile">
     <ul>
-        <li class="home"><a href="#page1">aaaaaaaaaaaaaaaa</a></li>
-        <li><a href="#" >Contact Us</a></li>
-        <li><a href="{% url 'login' %}" >User Login</a></li>
+        <li class="home"><a href="#page1">InfoMosaic</a></li>
+        <li class="menu-icon"><a href="#"><i class="fas fa-bars"></i></a></li>
+        <!-- Add a hidden menu here -->
+          <div class="hidden-menu">
+            <ul>
+              <li><a href="#">Option 1</a></li>
+            </ul>
+          </div>
     </ul>
   </div>
+
 
   <div id="page1">
     <div class="welcome"><br>WELCOME TO<br></div>
@@ -344,6 +350,22 @@
     window.addEventListener('DOMContentLoaded', function () {
       window.dispatchEvent(new Event('resize'));
     });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuIcon = document.querySelector('.menu-icon');
+      const hiddenMenu = document.querySelector('.hidden-menu');
+  
+      menuIcon.addEventListener('click', function (e) {
+          e.preventDefault(); // Prevent the default behavior of the anchor tag
+          // Toggle the display of the hidden menu
+          if (hiddenMenu.style.display === 'block') {
+              hiddenMenu.style.display = 'none';
+          } else {
+              hiddenMenu.style.display = 'block';
+          }
+      });
+    });
+  
   </script>
   
 </body>
