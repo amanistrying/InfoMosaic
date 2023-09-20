@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,7 @@
   <title>InfoMosaic</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+  <link rel="stylesheet" href="{% static 'first_mnav.css' %}">
 
   <style>
     body {
@@ -279,6 +281,14 @@
     </ul>
   </div>
 
+  <div class="navbar1" id="mobile">
+    <ul>
+        <li class="home"><a href="#page1">aaaaaaaaaaaaaaaa</a></li>
+        <li><a href="#" >Contact Us</a></li>
+        <li><a href="{% url 'login' %}" >User Login</a></li>
+    </ul>
+  </div>
+
   <div id="page1">
     <div class="welcome"><br>WELCOME TO<br></div>
     <div class="im">InfoMosaic</div>
@@ -308,13 +318,16 @@
     // JavaScript to show/hide the desktop navigation bar based on scrolling
     window.addEventListener('scroll', function () {
       const desktopNavbar = document.getElementById('desktop-navbar');
+      const mNavbar = document.getElementById('mobile');
       const scrollY = window.scrollY;
       const maxScroll = window.innerHeight * 0.3; // Adjusted to 60% of the page
   
       if (scrollY >= maxScroll) {
-        desktopNavbar.classList.add('show'); // Add the 'show' class to display the desktop navigation bar
+        desktopNavbar.classList.add('show');
+        mNavbar.classList.add('show'); // Add the 'show' class to display the desktop navigation bar
       } else {
-        desktopNavbar.classList.remove('show'); // Remove the 'show' class to hide the desktop navigation bar
+        desktopNavbar.classList.remove('show');
+        mNavbar.classList.remove('show'); // Remove the 'show' class to hide the desktop navigation bar
       }
     });
 
