@@ -149,6 +149,7 @@
       background-color: rgba(0, 0, 0, 0); /* Initially transparent */
       z-index: 1000;
       transition: background-color 0.5s linear, opacity 0.5s linear; /* Linear transitions for background color and opacity */
+      overflow: hidden;
     }
   
     .navbar.show {
@@ -164,8 +165,13 @@
       align-items: center;
       height: 55px;
     }
+
+    .navbar ul.right-nav {
+      float: right; /* Float the rest of the links to the right */
+  }
   
     .navbar li {
+      display: inline;
       margin: 0 20px;
     }
   
@@ -179,6 +185,10 @@
   
     .navbar a:hover {
       color: #555;
+    }
+
+    .navbar li.home {
+      margin-right: auto; /* Push "Home" to the left */
     }
 
   @media (max-width: 768px) {
@@ -257,11 +267,13 @@
   <!-- Navigation bar -->
   <div class="navbar" id="navbar">
     <ul>
-      <li><a href="#page1">InfoMosaic</a></li>
-      <li><a href="{% url 'login' %}" >User Login</a></li>
-      <li><a href="{% url 'home' %}" >Service Provider</a></li>
+        <li class="home"><a href="#page1">InfoMosaic</a></li>
+        <li><a href="#" >Contact Us</a></li>
+        <li><a href="{% url 'login' %}" >User Login</a></li>
+        <li><a href="{% url 'home' %}" >Service Provider</a></li>
     </ul>
-  </div>
+</div>
+
 
   <div id="page1">
     <div class="welcome"><br>WELCOME TO<br></div>
