@@ -1,4 +1,5 @@
 .navbar1 {
+    display: none;
     opacity: 0; /* Initially hidden */
     position: fixed;
     top: 0;
