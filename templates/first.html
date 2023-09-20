@@ -362,14 +362,11 @@
   
       menuIcon.addEventListener('click', function (e) {
           e.preventDefault(); // Prevent the default behavior of the anchor tag
-          // Toggle the display of the hidden menu
-          if (hiddenMenu.style.display === 'block') {
-              hiddenMenu.style.display = 'none';
-          } else {
-              hiddenMenu.style.display = 'block';
-          }
+          // Toggle the 'show' class on the hidden menu
+          hiddenMenu.classList.toggle('show');
       });
     });
+  
   
   </script>
   

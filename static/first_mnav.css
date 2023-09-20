@@ -51,9 +51,18 @@
   }
 
   .navbar1 .hidden-menu {
-    display: none;
-    transition: background-color 0.5s linear, opacity 0.5s linear;
-  }
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s linear, opacity 0.5s linear;
+}
+
+/* Show the hidden menu */
+.navbar1 .hidden-menu.show {
+    max-height: 300px; /* Adjust the max height as needed to accommodate your menu items */
+    opacity: 1;
+    transition: max-height 0.5s linear, opacity 0.5s linear;
+}
 
   .navbar1 .hidden-menu ul{
     justify-content: center;
