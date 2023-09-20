@@ -191,6 +191,10 @@
       margin-right: auto; /* Push "Home" to the left */
     }
 
+    .mobile-navbar {
+      display: none;
+    }
+
   @media (max-width: 768px) {
     #page1 {
       height: 14em;
@@ -334,7 +338,7 @@
 </head>
 <body>
   <!-- Navigation bar -->
-  <div class="navbar" id="navbar">
+  <div class="navbar" id="desktop-navbar">
     <ul>
         <li class="home"><a href="#page1">InfoMosaic</a></li>
         <li><a href="#" >Contact Us</a></li>
@@ -343,7 +347,7 @@
     </ul>
   </div>
 
-  <div class="navbar mobile-navbar" id="navbar">
+  <div class="navbar mobile-navbar" id="mobile-navbar">
     <ul>
         <li><a href="#page1">InfoMosaic</a></li>
         <li class="dropdown">
@@ -383,18 +387,36 @@
     </div>
   </div>
   <script>
+    // JavaScript to show/hide the desktop navigation bar based on scrolling
     window.addEventListener('scroll', function () {
-      const navbar = document.getElementById('navbar');
+      const desktopNavbar = document.getElementById('desktop-navbar');
       const scrollY = window.scrollY;
       const maxScroll = window.innerHeight * 0.3; // Adjusted to 60% of the page
-  
+
       if (scrollY >= maxScroll) {
-        navbar.classList.add('show'); // Add the 'show' class to display the navigation bar
+        desktopNavbar.classList.add('show'); // Add the 'show' class to display the desktop navigation bar
       } else {
-        navbar.classList.remove('show'); // Remove the 'show' class to hide the navigation bar
+        desktopNavbar.classList.remove('show'); // Remove the 'show' class to hide the desktop navigation bar
       }
+    });
+
+    // JavaScript to show/hide the mobile navigation bar based on screen width
+    window.addEventListener('resize', function () {
+      const screenWidth = window.innerWidth;
+      const mobileNavbar = document.getElementById('mobile-navbar');
+
+      // Check if the screen width is less than or equal to 768px (or your desired breakpoint)
+      if (screenWidth <= 768) {
+        mobileNavbar.style.display = 'block'; // Display the mobile navbar
+      } else {
+        mobileNavbar.style.display = 'none'; // Hide the mobile navbar
+      }
+    });
+
+    // Call the resize event listener on page load to handle initial display
+    window.addEventListener('DOMContentLoaded', function () {
+      window.dispatchEvent(new Event('resize'));
     });
   </script>
 </body>
 </html>
-`
