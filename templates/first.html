@@ -181,14 +181,6 @@
       color: #555;
     }
 
-    .left-nav {
-      justify-self: left;
-    }
-
-    .right-nav {
-      justify-self: right;
-    }
-
   @media (max-width: 768px) {
     #page1 {
       height: 14em;
@@ -265,8 +257,8 @@
   <!-- Navigation bar -->
   <div class="navbar" id="navbar">
     <ul>
-      <li class="left-nav"><a href="#page1">InfoMosaic</a></li>
-      <li class="right-nav"><a href="{% url 'login' %}" >User Login</a></li>
+      <li><a href="#page1">InfoMosaic</a></li>
+      <li><a href="{% url 'login' %}" >User Login</a></li>
       <li><a href="{% url 'home' %}" >Service Provider</a></li>
     </ul>
   </div>
