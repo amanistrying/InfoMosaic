@@ -1,0 +1,51 @@
+.navbar1 {
+    opacity: 0; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-family: 'Montserrat';
+    background-color: rgba(0, 0, 0, 0); /* Initially transparent */
+    z-index: 1000;
+    transition: background-color 0.5s linear, opacity 0.5s linear; /* Linear transitions for background color and opacity */
+    overflow: hidden;
+  }
+
+  .navbar1.show {
+    opacity: 1; /* Set opacity to 1 when the class 'show' is applied */
+    background-color: rgba(237, 237, 237, 0.949); /* Set the background color when the class 'show' is applied */
+  }
+
+  .navbar1 ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 55px;
+  }
+
+  .navbar1 ul.right-nav {
+    float: right; /* Float the rest of the links to the right */
+}
+
+  .navbar1 li {
+    display: inline;
+    margin: 0 20px;
+  }
+
+  .navbar1 a {
+    text-decoration: none;
+    color: #1b1c1d;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    transition: color 0.5s ease;
+  }
+
+  .navbar1 a:hover {
+    color: #555;
+  }
+
+  .navbar1 li.home {
+    margin-right: auto; /* Push "Home" to the left */
+  }
