@@ -9,7 +9,6 @@
     background-color: rgba(0, 0, 0, 0); /* Initially transparent */
     z-index: 1000;
     transition: background-color 0.5s linear, opacity 0.5s linear; /* Linear transitions for background color and opacity */
-    overflow: hidden;
   }
 
   .navbar1.show {
