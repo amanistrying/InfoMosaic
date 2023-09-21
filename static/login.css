@@ -7,8 +7,7 @@
             justify-content: center;
             align-items: center;
             font-size: 20px;
-            height: 100vh;
-            overflow: hidden;
+            height: 90vh;
         }
 
         .login-container {
@@ -25,16 +24,13 @@
         .login-container .left-section {
             flex: 0 0 50%;
             text-align: center;
-            height: 100%;
             width: 50%;
-            padding: 0;
         }
 
         .login-container .left-section img {
             max-width: 100%;
             min-height: 100%;
             display: block;
-            object-fit: cover; 
         }
 
         .login-container .right-section {
@@ -108,12 +104,6 @@
         @media(max-width:1300px)
         {
             
-            .left-section{
-                margin: 0;
-            }
-            .left-section img{
-                object-fit: fill;
-            }
             .login-container h1{
                 font-size: 3.5vh;
                 margin-bottom: 15px;
@@ -129,26 +119,33 @@
             }
         }
         @media (max-width:1100px) {
-            .body{
+            body{
                 height: 100vh;
             }
             .login-container{
                 display: flex;
                 flex-direction: column;
-                height: 120%;
-                width: 100%;
+                width: 80%;
+                height: 80%;
+                border-radius: 15px;
             }
             .login-container .left-section{
                 width: 100%;
-                max-height: 62vh;
+                max-height: 60%;
+                border-radius: 15px;
+                min-height: 0%;
+                
             }
             .login-container .left-section img{
                 width: 100%;
-                max-height: 100%;
-                object-fit: fill;
+                min-height: 0%;
+                border-radius: 15px;
             }
             .right-section{
                 width: 100%;
+                border-radius: 15px;
+                height: auto;
+                padding-bottom: 20px;
             }
             .right-section .form-group input{
                 width: 75%;
@@ -159,13 +156,18 @@
         }
 
         @media (max-width:750px) {
+            .login-container{
+                width: 90%;
+            }
+
             .right-section.dragged-up {
                 transform: translateY(-100%);
             }
             .bar{
                 width: 96px;
                 height: 5px;
-                background-color: rgba(125, 46, 138, 0.489);
+                background-color: rgba(125, 46, 138, 0.489);    
                 border-radius: 15px;
+                z-index: 1001;
             }
         }
