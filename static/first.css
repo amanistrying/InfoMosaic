@@ -1,70 +1,68 @@
-{% load static %}
 body {
-    display: block;
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    width: 100%;
-  }
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  width: 100%;
+}
 
-  #page1 {
-    display: block;
-    {% load static %}
-    background-image: url("{% static 'finalwel.png' %}");
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    height: 24em;
-    margin: 0;
-  }
+#page1 {
+  display: block;
+  background-image: url("/static/finalwel.png"); /* Reference the static file directly */
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  height: 24em;
+  margin: 0;
+}
 
-  .page2 {
-    {% load static %}
-    background-color: #f5f5f5;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    position: relative;
-  }
+.page2 {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
 
-  .half-image {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 50%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
+.half-image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
-  .half1 {
-    {% load static %}
-    left: 0;
-    background-image: url("{% static 'half1.jpg' %}");
-  }
+.half1 {
+  left: 0;
+  background-image: url("/static/half1.jpg"); /* Reference the static file directly */
+}
 
-  .half2 {
-    {% load static %}
-    right: 0;
-    background-image: url("{% static 'half2.jpg' %}");
-  }
+.half2 {
+  right: 0;
+  background-image: url("/static/half2.jpg"); /* Reference the static file directly */
+}
 
-  .welcome {
-    position: absolute;
-    text-align: left;
-    font-size: 3.5em;
-    color: rgb(208, 208, 208);
-    left: 2%;
-    top: 7%;
-  }
+.welcome {
+  position: absolute;
+  text-align: left;
+  font-size: 3.5em;
+  color: rgb(208, 208, 208);
+  left: 2%;
+  top: 7%;
+}
 
-  .im {
-    position: absolute;
-    text-align: left;
-    font-size: 160px;
-    font-weight: 600;
-    color: #1b1c1d;
-    left: 2%;
-    top: 24%;
-  }
+.im {
+  position: absolute;
+  text-align: left;
+  font-size: 160px;
+  font-weight: 600;
+  color: #1b1c1d;
+  left: 2%;
+  top: 24%;
+}
+
+/* ... rest of your CSS code ... */
+
 
   .dadcontainer {
     display: flex;
