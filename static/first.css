@@ -1,3 +1,4 @@
+{% load static %}
 body {
     display: block;
     font-family: 'Montserrat', sans-serif;
