@@ -25,12 +25,16 @@
         .login-container .left-section {
             flex: 0 0 50%;
             text-align: center;
+            height: 100%;
+            width: 50%;
+            padding: 0;
         }
 
         .login-container .left-section img {
             max-width: 100%;
             min-height: 100%;
             display: block;
+            object-fit: cover; 
         }
 
         .login-container .right-section {
@@ -99,4 +103,69 @@
         .txtt{
             color: #4b2e72;
             font-size: 0.8em;
+        }
+
+        @media(max-width:1300px)
+        {
+            
+            .left-section{
+                margin: 0;
+            }
+            .left-section img{
+                object-fit: fill;
+            }
+            .login-container h1{
+                font-size: 3.5vh;
+                margin-bottom: 15px;
+            }
+            .form-group label{
+                font-size: 2.5vh;
+            }
+            .form-group input{
+                height: 4vh;
+            }
+            .error-message{
+                font-size: 2.5vh;
+            }
+        }
+        @media (max-width:1100px) {
+            .body{
+                height: 100vh;
+            }
+            .login-container{
+                display: flex;
+                flex-direction: column;
+                height: 120%;
+                width: 100%;
+            }
+            .login-container .left-section{
+                width: 100%;
+                max-height: 62vh;
+            }
+            .login-container .left-section img{
+                width: 100%;
+                max-height: 100%;
+                object-fit: fill;
+            }
+            .right-section{
+                width: 100%;
+            }
+            .right-section .form-group input{
+                width: 75%;
+            }
+            .right-section .form-group button{
+                width: 80%;
+            }
+        }
+
+        @media (max-width:750px) {
+            .right-section.dragged-up {
+                transform: translateY(-100%);
+            }
+            .bar{
+                width: 96px;
+                height: 5px;
+                background-color: rgba(125, 46, 138, 0.489);
+                border-radius: 15px;
+            }
         }
