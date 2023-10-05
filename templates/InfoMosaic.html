@@ -10,10 +10,41 @@
     <script src="https://kit.fontawesome.com/9659230551.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'first_mnav.css' %}">
     <link rel="stylesheet" href="{% static 'login.css' %}">
 </head>
 
 <body>
+      <!-- Navigation bar -->
+  <div class="navbar" id="desktop-navbar">
+    <ul>
+        <li class="home"><a href="{% url 'user' %}">InfoMosaic</a></li>
+        <li><a href="#" >Contact Us</a></li>
+        <li><a href="{% url 'login' %}" >User Login</a></li>
+        <li><a href="{% url 'home' %}" >Service Provider</a></li>
+    </ul>
+  </div>
+
+  <div class="navbar1" id="mobile">
+    <ul>
+        <li class="home"><a href="{% url 'user' %}">InfoMosaic</a></li>
+        <li class="menu-icon"><a href="#"><i class="fas fa-bars"></i></a></li>
+    </ul>
+    <!-- Add a hidden menu here -->
+    <div class="hidden-menu">
+      <ul>
+        <li><a href="#" >Contact Us</a></li>
+      </ul>
+      <ul>
+        <li><a href="{% url 'login' %}" >User Login</a></li>
+      </ul>
+      <ul><li><a href="{% url 'home' %}" >Service Provider</a></li></ul>
+    </div>
+    </ul>
+  </div>
+    <script src="{% static 'login.js' %}"></script>
+    
+
     <div class="login-container">
         <div class="left-section">
             {% load static %}
