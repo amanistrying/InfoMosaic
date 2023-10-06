@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+
+body {
+    background-color: #faf3eb;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+}
+
+.login-container {
+    width: 80%;
+    max-height: 85%;
+    padding: 0px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px;
+    margin-top: 50px;
+    overflow: hidden;
+}
+
+.login-container .left-section {
+    text-align: center;
+    overflow: hidden;
+}
+
+.login-container .left-section img {
+    max-width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.login-container .right-section {
+    min-width: 40%;
+    text-align: center;
+    background-color: #f2f2f2;
+}
+
+.login-container h1 {
+    color: #28383b;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    font-size: 35px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    z-index: 1;
+}
+
+.form-group label {
+    display: block;
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 50%;
+    height: 35px;
+    padding: 4px;
+    background-color: #cccccc4e;
+    border: 0px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    padding-left: 18px;
+}
+
+.form-group button {
+    width: 55.4%;
+    height: 50px;
+    padding: 0px;
+    margin: 0px;
+    background-color: #28383b;
+    color: #faf3eb;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+::placeholder {
+    color: #28383b;
+    opacity: 0.7;
+}
+
+.form-group button:hover {
+    background-color: #395a60;
+}
+
+.error-message {
+    color: red;
+    font-size: 18px;
+}
+
+@media (max-width: 1024px) {
+    .login-container{
+        width: 90%;
+        max-height: 90%;
+        flex-direction: column;
+        overflow: hidden;
+        border-radius: 15px;
+    }
+
+    .login-container .left-section img{
+        min-width: 100%;
+        margin-top: -15%;
+    }
+
+    .login-container .right-section {
+        flex: 0 0 50%;
+        min-width: 100%;
+        text-align: center;
+        background-color: #f2f2f2; 
+    }
+
+    .login-container h1{
+        margin-left: 1vh;
+        margin-right: 1vh5px;
+        font-size: 2.75vh;
+    }
+
+    .form-group input{
+        width: 70%;
+        height: 27px;
+    }
+
+    .form-group button{
+        width: 74.5%;
+    }
+
+    .form-group label{
+        font-size: 1.2vh;
+    }
+}

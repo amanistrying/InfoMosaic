@@ -65,8 +65,8 @@
                     <button type="submit">Log In</button>
                 </div>
             </form>
-            <div class="txtt">Don't have account?
-                <a href="{% url 'signUp' %}">Sign Up</a></div>
+            <div class="txtt">Don't have an account?
+                <a href="{% url 'serviceProviderSignUp' %}">Sign Up</a></div>
             <div class="error-message">
                 {% if error_message %}
                 <p>{{ error_message }}</p>

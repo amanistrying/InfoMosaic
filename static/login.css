@@ -19,6 +19,7 @@
             display: flex;
             align-items: center;
             margin: 0px;
+            margin-top: 25px;
         }
 
         .login-container .left-section {
