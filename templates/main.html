@@ -186,10 +186,10 @@
                         <h3 class="mb-0">{{ person.1 }}</h3>
                         <div class="mb-2 text-muted">
                             <div class="row">
-                                <div class="col-2">
+                                <div class="col-12 col-xxl-2 col-lg-3 col-sm-6">
                                     {{ person.5 }}
                                 </div>
-                                <div class="col-9">
+                                <div class="col-12 col-xxl-10 col-lg-9 col-sm-6">
                                     {% if person.6 %}
                                     {% for x in ""|ljust:person.6 %} <i class="fas fa-star" style="font-size: 12px"> </i> {% endfor %}
                                     {% endif %}
@@ -200,14 +200,14 @@
                             iusto nobis sunt, odit impedit eum molestias? Fugit libero tempore necessitatibus beatae
                             fugiat eos harum dolorum?</p>
                         <div class="row">
-                            <div class="col-2">
+                            <div class="col-12 col-xxl-2 col-lg-3 col-sm-6">
                                 <p class="card-text mb-auto mt-3">
-                                    <i class="fas fa-phone"> </i> {{ person.3 }}
+                                    <i class="fas fa-phone"></i> &nbsp{{ person.3 }}
                                 </p>
                             </div>
-                            <div class="col-10">
+                            <div class="col-12 col-xxl-10 col-lg-9 col-sm-6">
                                 <p class="card-text mb-auto mt-3">
-                                    <i class="fas fa-envelope"> </i> {{ person.2 }}
+                                    <i class="fas fa-envelope"></i>&nbsp {{ person.2 }}
                                 </p>
                             </div>
                         </div>
