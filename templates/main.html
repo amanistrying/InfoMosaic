@@ -7,6 +7,9 @@
     <title>InfoMosaic | Home</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
 
@@ -26,6 +29,7 @@
             padding: 20px;
             box-sizing: border-box;
             height: 100px;
+            z-index: 10;
         }
 
         .search-bar {
@@ -105,7 +109,7 @@
             margin-right: 0;
         }
 
-        .dropdown-menu {
+        .ddropdown-menu {
             width: 100%;
             padding: 8px;
             border-radius: 5px;
@@ -123,12 +127,15 @@
 </head>
 
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
     <div class="hud">
         <form method="get" action="{% url 'main' %}">
             <div class="search-location-rating">
                 <div class="section">
                     <select id="location-dropdown" placeholder="Location" name="location" id="location"
-                        value="{{ request.GET.location }}" class="dropdown-menu">
+                        value="{{ request.GET.location }}" class="ddropdown-menu">
                         <option value="">Select a location</option>
                         {% for location in locations %}
                         <option value="{{ location }}">{{ location }}</option>
@@ -137,7 +144,7 @@
                     </select>
                 </div>
                 <div class="section">
-                    <select class="dropdown-menu" id="Service-dropdown" placeholder="Service" name="service"
+                    <select class="ddropdown-menu" id="Service-dropdown" placeholder="Service" name="service"
                         id="service" value="{{ request.GET.service }}">
                         <option value="">Select a Service</option>
                         {% for service in services %}
@@ -146,7 +153,7 @@
                     </select>
                 </div>
                 <div class="section">
-                    <select class="dropdown-menu rating-dropdown" id="rating" placeholder="Rating" name="rating"
+                    <select class="ddropdown-menu rating-dropdown" id="rating" placeholder="Rating" name="rating"
                         id="rating" value="{{ request.GET.rating }}">
                         <option value="">Select Minimum Rating</option>
                         {% for rating in ratings %}
@@ -159,30 +166,73 @@
         </form>
     </div>
     <div style="height: 120px;"></div>
-    <div class="search-text">
-        {% if results %}
-        <h2>Search Results</h2>
-        <ul>
+    {% if results %}
+    <div class="container my-5 z-index-1">
+        <div class="row mb-2">
             {% for person in results %}
-            <li>Name-{{ person.1 }}
-                <br>
-                Email-{{ person.2 }}
-                <br>
-                Phone no-{{ person.3 }}
-                <br>
-                Service-{{ person.4 }}
-                <br>
-                Location-{{ person.5 }}
-                <br>
-                Ratings-{{ person.6 }}
-            </li>
-            <br>
+            <div class="col-md-12">
+                <div
+                    class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col-auto d-none d-lg-block">
+                        <img class="bd-placeholder-img" width="200" height="240"
+                            src="https://images.unsplash.com/photo-1600710230927-5414272ee82f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1892&q=80"
+                            role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
+                            focusable="false">
+                        <title>Placeholder</title>
+
+                    </div>
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-success">{{ person.4 }}</strong>
+                        <h3 class="mb-0">{{ person.1 }}</h3>
+                        <div class="mb-2 text-muted">
+                            <div class="row">
+                                <div class="col-2">
+                                    {{ person.5 }}
+                                </div>
+                                <div class="col-9">
+                                    {% if person.6 %}
+                                    {% for x in ""|ljust:person.6 %} <i class="fas fa-star" style="font-size: 12px"> </i> {% endfor %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <p class="card-text mb-auto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus
+                            iusto nobis sunt, odit impedit eum molestias? Fugit libero tempore necessitatibus beatae
+                            fugiat eos harum dolorum?</p>
+                        <div class="row">
+                            <div class="col-2">
+                                <p class="card-text mb-auto mt-3">
+                                    <i class="fas fa-phone"> </i> {{ person.3 }}
+                                </p>
+                            </div>
+                            <div class="col-10">
+                                <p class="card-text mb-auto mt-3">
+                                    <i class="fas fa-envelope"> </i> {{ person.2 }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             {% endfor %}
-        </ul>
+        </div>
         {% elif search_params.location or search_params.service or search_params.ratings %}
-        <p>No results found.</p>
+        <p>
+            <center>No results found.</center>
+        </p>
         {% endif %}
     </div>
+
+    <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="{% url 'user' %}" class="nav-link px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a href="{% url 'login' %}" class="nav-link px-2 text-muted">User Login</a></li>
+            <li class="nav-item"><a href="{% url 'home' %}" class="nav-link px-2 text-muted">Service Provider</a>
+            </li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+        </ul>
+        <p class="text-center text-muted">© 2023 InfoMosaic, Inc</p>
+    </footer>
 
     <!-- Rest of your website content goes here -->
 
