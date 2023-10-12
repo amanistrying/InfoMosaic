@@ -16,6 +16,7 @@
   background-color: rgba(237, 237, 237, 0.949); /* Set the background color when the class 'show' is applied */
 }
 
+
 .navbar ul {
   list-style: none;
   padding: 0;
@@ -24,6 +25,24 @@
   align-items: center;
   height: 55px;
 }
+
+.ser-ico:hover ~ .search-hover{
+      width: 300px;
+}
+
+.search-hover {
+  border: 0;
+  background-color: transparent;
+  outline: none;
+  width: 0px;
+  transition: all 0.5s;
+}
+
+.search-hover:hover{
+  padding-left: 15px;
+  width: 300px;
+}
+
 
 .navbar ul.right-nav {
   float: right; /* Float the rest of the links to the right */
@@ -40,6 +59,10 @@
   font-size: 18px;
   font-family: 'Montserrat', sans-serif;
   transition: color 0.5s ease;
+}
+
+a#bigg{
+  font-size: 28px;
 }
 
 .navbar a:hover {
@@ -141,3 +164,4 @@
     display: block;
   }
 }
+
