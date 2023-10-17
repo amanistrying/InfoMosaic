@@ -1,0 +1,271 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:&display=swap');
+
+body{
+    font-family:Poppins;
+}
+
+#cor1{
+    background-color: white;
+    color: black;
+    border-radius: 0.2em;
+}
+
+#myCarousel{
+    background-color: #cea585;
+}
+
+#myCarousel p{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    color: grey;
+}
+
+h2{
+    font-weight: 600;
+}
+
+h1{
+  font-weight:bolder;
+}
+
+h6{
+    font-size: 0.8em;
+    margin-bottom: 0.5em;
+    font-family: montserrat;
+    font-weight: 400;
+    color: orangered;
+}
+
+#page1 {
+    background-image: url("./finalwel.png"); /* Reference the static file directly */
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 20em;
+    margin: 0;
+  }
+
+  .welcome {
+    text-align: left;
+    font-size: 3em;
+    margin-left: 15px;
+    color: rgb(208, 208, 208);
+  }
+  
+  .im {
+    text-align: left;
+    font-size: 8em;
+    margin-left: 15px;
+    font-weight: 600;
+    color: #1b1c1d;
+  }
+
+  .extrael {
+    display: flex;
+    background-color: #f2f2f2;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+  }
+
+  #cell-card{
+    border-radius: 200px;
+    width: 100%;
+    height: 330px;
+    border: 0;
+    background-color: #f2f2f251;
+  }
+
+  #cell-card h5{
+    font-size: 1.05em;
+    font-weight: 600;
+  }
+
+  #cell-card img{
+    border-radius: 200px;
+    height: 240px;
+    width: auto;
+    object-fit: cover;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    display: flex;
+    background: transparent;
+    text-align: center;
+    border: 0;
+  }
+
+  .swiper-slide img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+  }
+
+  #car-card{
+    border: 0;
+    text-align: center;
+    height: 100%;
+    
+  }
+  
+  .card-img-overlay{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgb(0, 0, 0, 0.5)) ;
+  }
+
+  #car-left{
+    background-color: #2a2a2b;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .btn{
+    font-size: 1.1em;
+  }
+
+  .swiper-button-next, .swiper-button-prev{
+    background-color: #f2f2f2;
+    width: 100%;
+    height: 100%;
+    padding: 1.5em;
+    border-radius: 50%;
+  }
+
+  .swiper-button-next:after, .swiper-button-prev:after{
+    color: #1b1c1d;
+    font-size: 1em !important;
+  }
+
+  #best-sp .card-img-top{
+    
+  }
+
+  #best-sp{
+    border: 0px;
+    border-bottom: 0.05em rgba(87, 87, 87, 0.336)dashed;
+  }
+
+  #best-sp img{
+    width: 100%;
+    height: 300px;
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .left-colu{
+    display: flex;
+    color: orangered;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    height: 100%;
+  }
+
+  #swiper2{
+    height:fit-content ;
+  }
+
+  #swiper2 .swiper-slide{
+    height: 20px;
+  }
+
+  .hover-text{
+    color: #f2f2f2;
+    display: none;
+  }
+
+  .card-img-over{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 300px;
+    width: 100%;
+    z-index: 3;
+    background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgb(0, 0, 0, 0.5)) ;
+  }
+
+    .card-img-over:hover .hover-text{
+      display: block;
+    }
+
+  .card-img-over:hover{
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgb(0, 0, 0, 0.7)) ;
+  }
+
+  img:hover{
+    opacity: 0.3;
+  }
+
+  #best-sp .text-t{
+    text-align: left;
+    color: orangered;
+    font-size: 0.7em;
+    font-weight: 100;
+  }
+
+  #best-sp .card-text{
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.8em;
+  }
+
+@media (max-width: 768px) {
+  .card-title{
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 768px) {
+    #cor1{
+        width: 80%;
+        min-height: fit-content;
+    }
+
+    #myCarousel{
+        background-color: white;
+    }
+}
+
+@media (max-width: 767px) {
+    #page1 {
+      height: 14em;
+      width: 100%;
+      background-size: cover;
+    }
+  
+    .extrael {
+      height: 200px;
+      font-size: 1.5em;
+      padding: 20px;
+      text-align: center;
+    }
+  
+    .welcome {
+      font-size: 2em;
+      top: 6%;
+    }
+  
+    .im {
+      font-size: 65px;
+      top: 15%;
+    }
+
+    #car-left{
+      padding: 2em;
+      margin-top: 1em;
+      width: 100%;
+    }
+}
