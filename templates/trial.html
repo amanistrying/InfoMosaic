@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./first_mnav.css">
     <title>Hello, world!</title>
 </head>
 
@@ -28,6 +29,43 @@
         <div class="welcome mb-n1"><br>WELCOME TO</div>
         <div class="im">InfoMosaic</div>
     </div>
+
+    <script src="./first.js"></script>
+    <div class="navbar" id="desktop-navbar">
+        <ul class="navbar-nav me-auto my-2">
+        </ul>
+        <ul class="me-auto">
+            <li class="home pe-5" style="font-weight: 600;"><a href="#page1" id="bigg">INFOMOSAIC</a></li>
+            <li><a href="#page1" >HOME</a></li>
+            <li><a href="{% url 'home' %}" >SERVICE PROVIDER</a></li>
+            <li><a href="{% url 'login' %}" >USER</a></li>
+            <li><a href="#" >CONTACT US</a></li>
+            <li>
+            <svg class="ser-ico" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+            <input type="text" class="search-hover" name="" placeholder="search here..." />
+            </li>
+        </ul>
+      </div>
+    
+      <div class="navbar1" id="mobile">
+        <ul>
+            <li class="home" id="homeh"><a href="#page1">InfoMosaic</a></li>
+            <li class="menu-icon"><a href="#"><i class="fas fa-bars"></i></a></li>
+        </ul>
+        <!-- Add a hidden menu here -->
+        <div class="hidden-menu">
+          <ul>
+            <li><a href="#" >Contact Us</a></li>
+          </ul>
+          <ul>
+            <li><a href="{% url 'login' %}" >User Login</a></li>
+          </ul>
+          <ul><li><a href="{% url 'home' %}" >Service Provider</a></li></ul>
+        </div>
+        </ul>
+      </div>
 
     <div class="extrael">We provide exceptional services tailored to your needs</div>
 
@@ -543,38 +581,37 @@
         });
     </script>
 
-    <div class="container" id="know-these">
+    <div class="container mb-5 pb-5" id="know-these">
         <div class="row my-5">
-            <div class="col-1"></div>
-            <div class="col-6">
+            <div class="col-2"></div>
+            <div class="col-5 py-5 pe-5">
                 <h6>KNOW THESE THINGS</h6>
                 <h1>No Mediator</h1>
                 <p>Since we only provide contact details, you talk to them in your native local language, making it a hassle free conversation on both ends</p>
                 <div class="btn btn-dark">Know more >></div>
             </div>
-            <div class="col-4">
-                <img src="https://images.unsplash.com/photo-1560250056-07ba64664864?auto=format&fit=crop&q=80&w=2051&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid" alt="">
+            <div class="col-3">
+                <img src="https://source.unsplash.com/300x350/?mediator" class="img-fluid" alt="">
             </div>
-            <div class="col-1"></div>
+            <div class="col-2"></div>
         </div>
 
         <div class="row my-5">
-            <div class="col-1"></div>
+            <div class="col-2"></div>
             <div class="col-3">
-                <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid" alt="">
+                <img src="https://source.unsplash.com/300x350/?money" class="img-fluid" alt="">
             </div>
-            <div class="col-1"></div>
-            <div class="col-6 py-5">
+            <div class="col-5 py-5 pe-5">
                 <h6>KNOW THESE THINGS</h6>
                 <h1>Old School Bargain Type</h1>
                 <p>We do no charge any kind of amount for our services yet and so no money is taken as commission</p>
                 <div class="btn btn-dark">Know more >></div>
             </div>
-            <div class="col-1"></div>
+            <div class="col-2"></div>
         </div>
     </div>
 
-    <div class="page2">
+    <div class="page2 mt-5 pt-5">
         <div class="half-image half1"></div>
         <div class="half-image half2"></div>
         <div class="thebar"></div>
@@ -593,10 +630,29 @@
             </div>
             <div class="textbias">Want to promote your services in your locality and nearby? Try our
                 Organization<br><br><br></div>
-            <div class="signs"><a href="{% url 'home' %}"><i class="fas fa-arrow-left"></i></a></div>
+            <div class="signs"><a href="{% url 'home' %}"><i id="fo" class="fas fa-arrow-left"></i></a></div>
         </div>
     </div>
 
+    <div class="container-fluid mb-0 pb-0" id="botto">
+    <div class="container mb-0">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <p class="col-md-4 mb-0 text-light">© 2022 Company, Inc</p>
+      
+          <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-0 mb-md-0 link-light text-decoration-none">
+            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+          </a>
+      
+          <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">About</a></li>
+          </ul>
+        </footer>
+      </div>
+      </div>
 
 
 

@@ -375,13 +375,18 @@ h6{
     width: 100%;
     background-color: #1b1c1d;
   }
-
-  #know-these img{
-    width: auto;
-    height: 100%;
-  }
   .me-n5{
     margin-right: -8em !important;
+  }
+
+  #botto{
+    background-color: #a69a91;
+    color: #f2f2f2;
+  }
+
+  .footer{
+    margin-bottom: 0;
+    color: #f2f2f2;
   }
 
 
