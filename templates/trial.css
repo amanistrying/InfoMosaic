@@ -130,9 +130,17 @@ h6{
     justify-content: center;
   }
 
+  #testimonials .card{
+    background-color: #f2f2f2;
+    color: #1b1c1dd9;
+    border: 0;
+  }
+
   .btn{
     font-size: 1.1em;
   }
+
+
 
   .swiper-button-next, .swiper-button-prev{
     background-color: #f2f2f2;
@@ -333,6 +341,49 @@ h6{
     font-size: 0.9em;
   }
 
+  .name-bar{
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+  }
+
+  .bi{
+    font-size: 0.8em;
+  }
+
+  .name-bar img{
+    height: 3em;
+    width: 3em;
+    border-radius: 50%;
+  }
+
+  .name-bar h5{
+    margin-bottom: 0;
+  }
+
+  #test-img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    margin-right: -8em !important;
+  }
+
+  .di{
+    height: 100%;
+    width: 100%;
+    background-color: #1b1c1d;
+  }
+
+  #know-these img{
+    width: auto;
+    height: 100%;
+  }
+  .me-n5{
+    margin-right: -8em !important;
+  }
+
 
 @media (max-width: 768px) {
   .card-title{
@@ -431,6 +482,8 @@ h6{
       font-size: 1em;
     }
 
+    
+
     .textff{
       margin: 10%;
       width: 100%;
@@ -441,4 +494,8 @@ h6{
       height: fit-content;
       background-image: radial-gradient(circle at 50% 50%, rgba(255,255,255, 0.8), rgba(255, 255, 255, 0.6)), url("./ffnow2.png");
     }
+
+    
+    
   }
+
