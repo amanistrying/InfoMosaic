@@ -1,8 +1,5 @@
 body {
-  display: block;
   font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  width: 100%;
 }
 
 #page1 {
@@ -12,6 +9,10 @@ body {
   background-size: 100% auto;
   height: 24em;
   margin: 0;
+}
+
+#topele img{ 
+  max-height: 200px;
 }
 
 .page2 {

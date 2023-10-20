@@ -28,7 +28,7 @@
 
 .ser-ico:hover ~ .search-hover{
       width: 300px;
-      padding-left: 3px;
+      padding-left: 15px;
 }
 
 .search-hover {
@@ -40,7 +40,6 @@
 }
 
 .search-hover:hover{
-  padding-left: 12px;
   width: 300px;
 }
 
