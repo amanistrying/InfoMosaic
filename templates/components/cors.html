@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello, world!</title>
+
+    <!-- External CSS Links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Local CSS Files -->
+    <link rel="stylesheet" href="{% static 'trial.css' %}">
+    <link rel="stylesheet" href="{% static 'first_mnav.css' %}">
+</head>
+<body>
+
+    <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"
+                    aria-current="true"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-12 col-lg-4 m-3 p-3 pb-4 m-auto" id="cor1">
+                        <div class="container mt-4" id="cont1">
+                            <h6>CERTIFIED PERSONNEL</h6>
+                            <h2>We Connect You With The Best Out There</h2>
+                            <p>Only certified personnel can register as service providers so ensuring you the best job</p>
+                            <p><a class="btn btn-lg btn-dark mt-2" href="#">Sign in</a></p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 d-none d-lg-block text-center">
+                        <img width="600" height="400" class="icon" src="{% static 'item1.png' %}" alt="Item 1" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat the carousel-item div for other slides -->
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-12 col-lg-4 m-3 p-3 pb-4 m-auto" id="cor1">
+                        <div class="container mt-4" id="cont1">
+                            <h6>CERTIFIED PERSONNEL</h6>
+                            <h2>We Connect You With The Best Out There</h2>
+                            <p>Only certified personnel can register as service providers so ensuring you the best job</p>
+                            <p><a class="btn btn-lg btn-dark mt-2" href="#">Sign in</a></p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 d-none d-lg-block text-center">
+                        <img width="600" height="400" class="icon" src="{% static 'item1.png' %}" alt="Item 2" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-12 col-lg-4 m-3 p-3 pb-4 m-auto" id="cor1">
+                        <div class="container mt-4" id="cont1">
+                            <h6>CERTIFIED PERSONNEL</h6>
+                            <h2>We Connect You With The Best Out There</h2>
+                            <p>Only certified personnel can register as service providers so ensuring you the best job</p>
+                            <p><a class="btn btn-lg btn-dark mt-2" href="#">Sign in</a></p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 d-none d-lg-block text-center">
+                        <img width="600" height="400" class="icon" src="{% static 'item1.png' %}" alt="Item 3">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- External JavaScript Links -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

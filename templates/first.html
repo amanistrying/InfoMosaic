@@ -11,7 +11,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static 'first_mnav.css' %}">
-  <link rel="stylesheet" href="{% static 'first.css' %}">
+
+  
 </head>
 <body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
@@ -50,13 +51,63 @@
     </ul>
   </div>
 
-
-  <div id="page1">
-    <div class="welcome"><br>WELCOME TO<br></div>
+  <!--Top title container-->
+  <div class="container-fluid" id="page1">
+    <div class="welcome mb-n1"><br>WELCOME TO</div>
     <div class="im">InfoMosaic</div>
-  </div>
+</div>
 
   <div class="extrael">We provide exceptional services tailored to your needs</div>
+  
+  {% include 'components/cors.html' %}
+  {% include 'components/away.html' %}
+  {% include 'components/sliderwala.html' %}
+
+  <div class="fluid-container my-5" id="ffnow">
+    <div class="textff">
+        <h6>SPECIAL LIMITED OFFER</h6>
+        <h1>Get Free Life Time Subsciption</h1>
+        <p>Register now as one of our customers and unlock lifetime access to all the updated services for free
+            which may turn paid in future.</p>
+        <h2>Don't Miss the Chance</h2>
+        <div class="btn btn-dark mt-3">Register Now </div>
+    </div>
+</div>
+
+<!--know these no mediator-->
+<div class="container mb-5 pb-5" id="know-these">
+  <div class="row my-5 g-3">
+      <div class="col-lg-1 col-xxl-2 d-none d-lg-block"></div>
+      <div class="col-12 col-md-7 col-lg-6 col-xxl-5 py-5 pe-5">
+          <h6>KNOW THESE THINGS</h6>
+          <h1>No Mediator</h1>
+          <p>Since we only provide contact details, you talk to them in your native local language, making it a
+              hassle free conversation on both ends</p>
+          <div class="btn btn-dark">Know more >></div>
+      </div>
+      <div class="col-md-5 col-lg-4 col-xxl-3 d-none d-md-block">
+          <img src="https://images.unsplash.com/photo-1725870475677-7dc91efe9f93?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+          alt="" class="img-fluid">
+      </div>
+      <div class="col-lg-1 col-xxl-2 d-none d-lg-block"></div>
+  </div>
+
+  <div class="row my-5 g-3">
+      <div class="col-lg-1 col-xxl-2 d-none d-lg-block"></div>
+      <div class="col-md-5 col-lg-4 col-xxl-3 d-none d-md-block">
+          <img src="https://images.unsplash.com/photo-1607767583149-021077f2a4ff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGJhcmdhaW58ZW58MHx8MHx8fDA%3D" 
+          alt="" class="img-fluid">
+      </div>
+      <div class="col-12 col-md-7 col-lg-6 col-xxl-5 py-5 pe-5">
+          <h6>KNOW THESE THINGS</h6>
+          <h1>Old School Bargain Type</h1>
+          <p>We do no charge any kind of amount for our services yet and so no money is taken as commission</p>
+          <div class="btn btn-dark">Know more >></div>
+      </div>
+      <div class="col-lg-1 col-xxl-2 d-none d-lg-block"></div>
+  </div>
+</div>
+  
   <div class="page2">
     <div class="half-image half1"></div>
     <div class="half-image half2"></div>
@@ -77,5 +128,6 @@
     </div>
   </div>
   <script src="{% static 'first.js' %}"></script>
+  
 </body>
 </html>

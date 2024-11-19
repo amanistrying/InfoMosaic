@@ -3,7 +3,7 @@ from django.shortcuts import render, HttpResponse, HttpResponseRedirect, redirec
 from django.db import connection
 # from django.contrib.sessions import session
 from django.conf import settings
-from azure.storage.blob import BlobServiceClient
+# from azure.storage.blob import BlobServiceClient
 
 # Create your views here.
 

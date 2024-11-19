@@ -1,14 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:&display=swap');
+
+body {
+    font-family: Poppins, sans-serif;
+}
+
+h1, h2, h6 {
+    font-weight: 700;
+}
+
+h1 {
+    font-weight: bolder;
+}
+
+h2 {
+    font-weight: 600;
+}
+
+h6 {
+    font-size: 0.8em;
+    margin-bottom: 0.5em;
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    color: orangered;
+}
+
+.btn {
+    font-size: 1.1em;
+}
 body {
   font-family: 'Montserrat', sans-serif;
 }
 
 #page1 {
   display: block;
-  background-image: url("/static/finalwel.png"); /* Reference the static file directly */
+  background-image: url("/static/finalwel.png");
   background-repeat: no-repeat;
   background-size: 100% auto;
   height: 24em;
   margin: 0;
+  padding: 0%;
 }
 
 #topele img{ 
@@ -52,7 +82,7 @@ body {
   top: 7%;
 }
 
-.im {
+/* .im {
   position: absolute;
   text-align: left;
   font-size: 160px;
@@ -60,7 +90,7 @@ body {
   color: #1b1c1d;
   left: 2%;
   top: 24%;
-}
+} */
 
 /* ... rest of your CSS code ... */
 

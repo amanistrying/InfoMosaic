@@ -36,36 +36,40 @@
         </ul>
         <ul class="me-auto">
             <li class="home pe-5" style="font-weight: 600;"><a href="#page1" id="bigg">INFOMOSAIC</a></li>
-            <li><a href="#page1" >HOME</a></li>
-            <li><a href="{% url 'home' %}" >SERVICE PROVIDER</a></li>
-            <li><a href="{% url 'login' %}" >USER</a></li>
-            <li><a href="#" >CONTACT US</a></li>
+            <li><a href="#page1">HOME</a></li>
+            <li><a href="{% url 'home' %}">SERVICE PROVIDER</a></li>
+            <li><a href="{% url 'login' %}">USER</a></li>
+            <li><a href="#">CONTACT US</a></li>
             <li>
-            <svg class="ser-ico" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-            </svg>
-            <input type="text" class="search-hover" name="" placeholder="search here..." />
+                <svg class="ser-ico" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-search" viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg>
+                <input type="text" class="search-hover" name="" placeholder="search here..." />
             </li>
         </ul>
-      </div>
-    
-      <div class="navbar1" id="mobile">
+    </div>
+
+    <div class="navbar1" id="mobile">
         <ul>
             <li class="home" id="homeh"><a href="#page1">InfoMosaic</a></li>
             <li class="menu-icon"><a href="#"><i class="fas fa-bars"></i></a></li>
         </ul>
         <!-- Add a hidden menu here -->
         <div class="hidden-menu">
-          <ul>
-            <li><a href="#" >Contact Us</a></li>
-          </ul>
-          <ul>
-            <li><a href="{% url 'login' %}" >User Login</a></li>
-          </ul>
-          <ul><li><a href="{% url 'home' %}" >Service Provider</a></li></ul>
+            <ul>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <ul>
+                <li><a href="{% url 'login' %}">User Login</a></li>
+            </ul>
+            <ul>
+                <li><a href="{% url 'home' %}">Service Provider</a></li>
+            </ul>
         </div>
         </ul>
-      </div>
+    </div>
 
     <div class="extrael">We provide exceptional services tailored to your needs</div>
 
@@ -441,6 +445,7 @@
         </div>
     </div>
 
+    <!--Testimonials component-->
     <div class="container my-5 py-5" id="testim">
         <div class="row my-5" id="center-kro">
             <div class="col-1 d-none d-xl-block"></div>
@@ -587,7 +592,8 @@
             <div class="col-12 col-md-7 col-lg-6 col-xxl-5 py-5 pe-5">
                 <h6>KNOW THESE THINGS</h6>
                 <h1>No Mediator</h1>
-                <p>Since we only provide contact details, you talk to them in your native local language, making it a hassle free conversation on both ends</p>
+                <p>Since we only provide contact details, you talk to them in your native local language, making it a
+                    hassle free conversation on both ends</p>
                 <div class="btn btn-dark">Know more >></div>
             </div>
             <div class="col-md-5 col-lg-4 col-xxl-3 d-none d-md-block">
@@ -635,24 +641,27 @@
     </div>
 
     <div class="container-fluid mb-0 pb-0" id="botto">
-    <div class="container mb-0">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-          <p class="col-md-4 mb-0 text-light">© 2022 Company, Inc</p>
-      
-          <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-0 mb-md-0 link-light text-decoration-none">
-            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-          </a>
-      
-          <ul class="nav col-md-4 justify-content-end">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">About</a></li>
-          </ul>
-        </footer>
-      </div>
-      </div>
+        <div class="container mb-0">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <p class="col-md-4 mb-0 text-light">© 2022 Company, Inc</p>
+
+                <a href="/"
+                    class="col-md-4 d-flex align-items-center justify-content-center mb-0 mb-md-0 link-light text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
+
+                <ul class="nav col-md-4 justify-content-end">
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Features</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Pricing</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-light">FAQs</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-light">About</a></li>
+                </ul>
+            </footer>
+        </div>
+    </div>
 
 
 
@@ -725,4 +734,5 @@
         </button>
     </div> -->
 </body>
+
 </html>

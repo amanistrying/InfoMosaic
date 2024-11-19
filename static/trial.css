@@ -389,6 +389,11 @@ h6{
     color: #f2f2f2;
   }
 
+  .img-fluid {
+    max-width: 90%;
+    height: 90%;
+  }
+
 
 @media (max-width: 768px) {
   .card-title{
@@ -497,7 +502,7 @@ h6{
 
     #ffnow{
       height: fit-content;
-      background-image: radial-gradient(circle at 50% 50%, rgba(255,255,255, 0.8), rgba(255, 255, 255, 0.6)), url("./ffnow2.png");
+      background-image: radial-gradient(circle at 50% 50%, rgba(255,255,255, 0.8), rgba(255, 255, 255, 0.6)), url("/static/ffnow2.png");
     }
 
     
